@@ -173,6 +173,9 @@
     <ClCompile Include="day11_test.cpp" />
     <ClCompile Include="day12_test.cpp" />
     <ClCompile Include="day13_test.cpp" />
+    <ClCompile Include="day14_test.cpp" />
+    <ClCompile Include="day15_test.cpp" />
+    <ClCompile Include="day16_test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -224,6 +227,15 @@
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="Day13.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day14.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day15.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day16.in">
       <DeploymentContent>true</DeploymentContent>
     </None>
   </ItemGroup>
