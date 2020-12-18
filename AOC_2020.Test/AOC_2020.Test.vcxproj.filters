@@ -69,6 +69,12 @@
     <ClCompile Include="day16_test.cpp">
       <Filter>Source Files\days</Filter>
     </ClCompile>
+    <ClCompile Include="day17_test.cpp">
+      <Filter>Source Files\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day18_test.cpp">
+      <Filter>Source Files\days</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -122,6 +128,12 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Day16.in">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Day17.in">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Day18.in">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
