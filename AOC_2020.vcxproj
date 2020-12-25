@@ -64,6 +64,13 @@
     <ClCompile Include="day16.cpp" />
     <ClCompile Include="day17.cpp" />
     <ClCompile Include="day18.cpp" />
+    <ClCompile Include="day19.cpp" />
+    <ClCompile Include="day20.cpp" />
+    <ClCompile Include="day21.cpp" />
+    <ClCompile Include="day22.cpp" />
+    <ClCompile Include="day23.cpp" />
+    <ClCompile Include="day24.cpp" />
+    <ClCompile Include="day25.cpp" />
     <ClCompile Include="input.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -89,7 +96,17 @@
     <ClInclude Include="day16.h" />
     <ClInclude Include="day17.h" />
     <ClInclude Include="day18.h" />
+    <ClInclude Include="day19.h" />
+    <ClInclude Include="day20.h" />
+    <ClInclude Include="day21.h" />
+    <ClInclude Include="day22.h" />
+    <ClInclude Include="day23.h" />
+    <ClInclude Include="day24.h" />
+    <ClInclude Include="day25.h" />
     <ClInclude Include="input.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -113,7 +130,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -199,8 +216,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;AOC2020_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -229,5 +247,12 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\boost.1.72.0.0\build\boost.targets" Condition="Exists('packages\boost.1.72.0.0\build\boost.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\boost.1.72.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost.1.72.0.0\build\boost.targets'))" />
+  </Target>
 </Project>

@@ -113,6 +113,7 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -178,6 +179,13 @@
     <ClCompile Include="day16_test.cpp" />
     <ClCompile Include="day17_test.cpp" />
     <ClCompile Include="day18_test.cpp" />
+    <ClCompile Include="day19_test.cpp" />
+    <ClCompile Include="day20_test.cpp" />
+    <ClCompile Include="day21_test.cpp" />
+    <ClCompile Include="day22_test.cpp" />
+    <ClCompile Include="day23_test.cpp" />
+    <ClCompile Include="day24_test.cpp" />
+    <ClCompile Include="day25_test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -246,6 +254,28 @@
     <None Include="Day18.in">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="Day19.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day20.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day21.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day22.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day23.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day24.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Day25.in">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day09.in">
@@ -254,5 +284,14 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\boost.1.72.0.0\build\boost.targets" Condition="Exists('..\packages\boost.1.72.0.0\build\boost.targets')" />
+    <Import Project="..\packages\boost_regex-vc142.1.72.0.0\build\boost_regex-vc142.targets" Condition="Exists('..\packages\boost_regex-vc142.1.72.0.0\build\boost_regex-vc142.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\boost.1.72.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost.1.72.0.0\build\boost.targets'))" />
+    <Error Condition="!Exists('..\packages\boost_regex-vc142.1.72.0.0\build\boost_regex-vc142.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost_regex-vc142.1.72.0.0\build\boost_regex-vc142.targets'))" />
+  </Target>
 </Project>
